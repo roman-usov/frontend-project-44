@@ -43,13 +43,9 @@ export default class BrainEvenGameClass {
   }
 
   isCorrect() {
-    const isCorrect = !!(
+    return !!(
       (isEven(this.latestQuestion) && this.latestAnswer === 'yes')
       || (!isEven(this.latestQuestion) && this.latestAnswer === 'no')
     );
-
-    if (isCorrect) this.successfulAnswers += 1;
-
-    return isCorrect;
   }
 }
