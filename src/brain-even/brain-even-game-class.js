@@ -44,8 +44,8 @@ export default class BrainEvenGameClass {
 
   isCorrect() {
     return !!(
-      (isEven(this.latestQuestion) && this.latestAnswer === 'yes')
-      || (!isEven(this.latestQuestion) && this.latestAnswer === 'no')
+      (this.isQuestionEven && this.latestAnswer === 'yes')
+      || (!this.isQuestionEven && this.latestAnswer === 'no')
     );
   }
 }
