@@ -1,7 +1,7 @@
 import generateRandomNumber from './generate-random-number.js';
 import isEven from './is-even.js';
 
-export default class BrainEvenGame {
+export default class BrainEvenGameClass {
   questions = [];
 
   answers = [];
