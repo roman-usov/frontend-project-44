@@ -1,4 +1,4 @@
-import { generateRandomNumber, isEven } from './game-utils.js';
+import { generateRandomNumber, isEven } from '../../game-utils.js';
 
 export default class BrainEvenGameClass {
   #latestQuestion;
@@ -37,10 +37,9 @@ export default class BrainEvenGameClass {
   }
 
   isCorrect() {
-    const isCorrect = (
-      (this.isQuestionEven && this.#latestAnswer === 'yes')
-      || (!this.isQuestionEven && this.#latestAnswer === 'no')
-    );
+    const isCorrect =
+      (this.isQuestionEven && this.#latestAnswer === 'yes') ||
+      (!this.isQuestionEven && this.#latestAnswer === 'no');
 
     if (isCorrect) this.#successfulAnswers += 1;
 

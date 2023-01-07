@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-import playBrainEvenGame from '../src/brain-even/play-brain-even-game.js';
+import playBrainGame from '../src/play-brain-game.js';
+import BrainEvenGameClass from '../src/games/brain-even/brain-even-game-class.js';
 
 console.log('Welcome to the Brain Games!');
 
-playBrainEvenGame();
+playBrainGame(BrainEvenGameClass);
