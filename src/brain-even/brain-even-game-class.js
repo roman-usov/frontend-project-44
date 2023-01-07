@@ -1,51 +1,53 @@
-import generateRandomNumber from './generate-random-number.js';
-import isEven from './is-even.js';
+import { generateRandomNumber, isEven } from './game-utils.js';
 
 export default class BrainEvenGameClass {
-  questions = [];
+  #latestQuestion;
 
-  answers = [];
+  #latestAnswer;
 
-  constructor(minNumber, maxNumber, playerName) {
+  #successfulAnswers = 0;
+
+  constructor(minNumber, maxNumber, maxQuestions, playerName) {
     this.min = minNumber;
     this.max = maxNumber;
     this.name = playerName;
+    this.maxQuestions = maxQuestions;
+  }
+
+  generateQuestion() {
+    const random = generateRandomNumber(this.min, this.max);
+    this.#latestQuestion = random;
+    return random;
   }
 
   get playerName() {
     return this.name;
   }
 
-  set question(question) {
-    this.questions.push(question);
-  }
-
-  set answer(ans) {
-    this.answers.push(ans.toLowerCase());
-  }
-
-  get latestQuestion() {
-    return this.questions[this.questions.length - 1];
+  set latestAnswer(ans) {
+    this.#latestAnswer = ans.toLowerCase();
   }
 
   get latestAnswer() {
-    return this.answers[this.answers.length - 1];
+    return this.#latestAnswer;
   }
 
   get isQuestionEven() {
-    return isEven(this.latestQuestion);
-  }
-
-  generateQuestion() {
-    const random = generateRandomNumber(this.min, this.max);
-    this.question = random;
-    return random;
+    return isEven(this.#latestQuestion);
   }
 
   isCorrect() {
-    return !!(
-      (this.isQuestionEven && this.latestAnswer === 'yes')
-      || (!this.isQuestionEven && this.latestAnswer === 'no')
+    const isCorrect = (
+      (this.isQuestionEven && this.#latestAnswer === 'yes')
+      || (!this.isQuestionEven && this.#latestAnswer === 'no')
     );
+
+    if (isCorrect) this.#successfulAnswers += 1;
+
+    return isCorrect;
+  }
+
+  isWon() {
+    return this.#successfulAnswers === this.maxQuestions;
   }
 }

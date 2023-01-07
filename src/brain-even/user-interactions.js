@@ -12,15 +12,15 @@ export function showQuestionAndGetAnswer(question) {
   return readlineSync.question('Your answer: ');
 }
 
-export function showResponse(result, isAnEvenNumber, answer, name) {
-  if (result) {
-    console.log('Correct!');
-    return;
-  }
+export function showWinResponse() {
+  console.log('Correct!');
+}
+
+export function showLoseResponse(isAnEvenNumber, answer, name) {
   console.log(
-    `'${answer}' is wrong answer ;(. Correct answer was ${
+    `'${answer}' is wrong answer ;(. Correct answer was '${
       isAnEvenNumber ? 'yes' : 'no'
-    }.`,
+    }'.`,
   );
   console.log(`Let's try again, ${name}!`);
 }
