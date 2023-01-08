@@ -3,11 +3,11 @@ import readlineSync from 'readline-sync';
 export function greet() {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
   return name;
 }
 
-export function showQuestionAndGetAnswer(question) {
+export function showQuestionAndGetAnswer(question, task) {
+  console.log(`${task}`);
   console.log(`Question: ${question}`);
   return readlineSync.question('Your answer: ');
 }

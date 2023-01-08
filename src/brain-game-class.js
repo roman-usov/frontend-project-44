@@ -1,4 +1,6 @@
 export default class BrainGameClass {
+  _task;
+
   latestQuestion;
 
   _latestUserAnswer;
@@ -12,6 +14,10 @@ export default class BrainGameClass {
     this.max = maxNumber;
     this._name = playerName;
     this.maxQuestions = maxQuestions;
+  }
+
+  get task() {
+    return this._task;
   }
 
   get playerName() {

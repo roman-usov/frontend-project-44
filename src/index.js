@@ -21,7 +21,10 @@ export default function playBrainGame(gameToPlay) {
   );
 
   while (!game.isWon()) {
-    game.latestUserAnswer = showQuestionAndGetAnswer(game.generateQuestion());
+    game.latestUserAnswer = showQuestionAndGetAnswer(
+      game.generateQuestion(),
+      game.task,
+    );
 
     if (!game.isCorrect()) {
       showLoseResponse(
