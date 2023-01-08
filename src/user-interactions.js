@@ -16,11 +16,9 @@ export function showWinResponse() {
   console.log('Correct!');
 }
 
-export function showLoseResponse(isAnEvenNumber, answer, name) {
+export function showLoseResponse(correctAnswer, userAnswer, name) {
   console.log(
-    `'${answer}' is wrong answer ;(. Correct answer was '${
-      isAnEvenNumber ? 'yes' : 'no'
-    }'.`,
+    `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
   );
   console.log(`Let's try again, ${name}!`);
 }

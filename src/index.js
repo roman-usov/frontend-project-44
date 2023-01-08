@@ -21,10 +21,14 @@ export default function playBrainGame(gameToPlay) {
   );
 
   while (!game.isWon()) {
-    game.latestAnswer = showQuestionAndGetAnswer(game.generateQuestion());
+    game.latestUserAnswer = showQuestionAndGetAnswer(game.generateQuestion());
 
     if (!game.isCorrect()) {
-      showLoseResponse(game.isQuestionEven, game.latestAnswer, game.playerName);
+      showLoseResponse(
+        game.latestCorrectAnswer,
+        game.latestUserAnswer,
+        game.playerName,
+      );
 
       return;
     }
