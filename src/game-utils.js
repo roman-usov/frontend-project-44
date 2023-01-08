@@ -24,5 +24,7 @@ export function doMath(expression) {
       return +firstArgument - +secondArgument;
     case '*':
       return +firstArgument * +secondArgument;
+    default:
+      return NaN;
   }
 }

@@ -14,7 +14,7 @@ export default class BrainCalcGameClass extends BrainGameClass {
       this.max,
     )} ${generateRandomOperator()} ${generateRandomNumber(this.min, this.max)}`;
     this.latestQuestion = expression;
-    this.latestCorrectAnswer = doMath(this.latestQuestion) + '';
+    this.latestCorrectAnswer = `${doMath(this.latestQuestion)}`;
     return expression;
   }
 }
