@@ -7,7 +7,7 @@ import {
 } from './user-interactions.js';
 
 const MIN_NUMBER = 1;
-const MAX_NUMBER = 100;
+const MAX_NUMBER = 20;
 const MAX_QUESTIONS = 3;
 
 export default function playBrainGame(GameToPlay) {
