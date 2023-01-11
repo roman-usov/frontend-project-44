@@ -6,7 +6,7 @@ import {
 } from '../../game-utils.js';
 
 export default class BrainCalcGameClass extends BrainGameClass {
-  task = 'What is the result of the expression?';
+  taskName = 'What is the result of the expression?';
 
   generateQuestion() {
     const expression = `${generateRandomNumber(

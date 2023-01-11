@@ -1,11 +1,11 @@
 export default class BrainGameClass {
-  task;
+  taskName;
 
-  latestQuestion;
+  question;
 
-  latestUserAnswer;
+  userAnswer;
 
-  latestCorrectAnswer;
+  correctAnswer;
 
   successfulAnswers = 0;
 
@@ -17,7 +17,7 @@ export default class BrainGameClass {
   }
 
   get task() {
-    return this.task;
+    return this.taskName;
   }
 
   get playerName() {
@@ -25,19 +25,19 @@ export default class BrainGameClass {
   }
 
   set latestUserAnswer(ans) {
-    this.latestUserAnswer = ans.toLowerCase();
+    this.userAnswer = ans.toLowerCase();
   }
 
   get latestUserAnswer() {
-    return this.latestUserAnswer;
+    return this.userAnswer;
   }
 
   set latestCorrectAnswer(ans) {
-    this.latestCorrectAnswer = ans;
+    this.correctAnswer = ans;
   }
 
   get latestCorrectAnswer() {
-    return this.latestCorrectAnswer;
+    return this.correctAnswer;
   }
 
   isCorrect() {
