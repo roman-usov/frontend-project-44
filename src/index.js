@@ -10,34 +10,28 @@ const MIN_NUMBER = 1;
 const MAX_NUMBER = 20;
 const MAX_QUESTIONS = 3;
 
-export default function playBrainGame(GameToPlay) {
+export default function playBrainGame(gameToPlay) {
   const playerName = greet();
 
-  const game = new GameToPlay(
-    MIN_NUMBER,
-    MAX_NUMBER,
-    MAX_QUESTIONS,
-    playerName,
-  );
+  let round = 1;
 
-  while (!game.isWon()) {
-    game.latestUserAnswer = showQuestionAndGetAnswer(
-      game.generateQuestion(),
-      game.task,
+  while (round <= MAX_QUESTIONS) {
+    const { task, question, correctAnswer } = gameToPlay(
+      MIN_NUMBER,
+      MAX_NUMBER,
     );
+    const userAnswer = showQuestionAndGetAnswer(question, task).toLowerCase();
 
-    if (!game.isCorrect()) {
-      showLoseResponse(
-        game.latestCorrectAnswer,
-        game.latestUserAnswer,
-        game.playerName,
-      );
+    if (userAnswer !== correctAnswer) {
+      showLoseResponse(correctAnswer, userAnswer, playerName);
 
       return;
     }
 
     showWinResponse();
+
+    round += 1;
   }
 
-  congratulate(game.playerName);
+  congratulate(playerName);
 }
