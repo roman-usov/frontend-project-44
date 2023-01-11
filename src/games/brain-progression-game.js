@@ -1,11 +1,7 @@
 import { generateRandomProgression } from '../game-utils.js';
 
-function generateQuestion(min, max) {
-  return generateRandomProgression(min, max);
-}
-
-export default function progressionGame(min, max) {
-  const { progression, hiddenNumber } = generateQuestion(min, max);
+export default function playProgressionGame(min, max) {
+  const { progression, hiddenNumber } = generateRandomProgression(min, max);
 
   return {
     task: 'What number is missing in the progression?',

@@ -4,20 +4,12 @@ import {
   doMath,
 } from '../game-utils.js';
 
-function generateQuestion(min, max) {
-  return `${generateRandomNumber(
+export default function playCalcGame(min, max) {
+  const question = `${generateRandomNumber(
     min,
     max,
   )} ${generateRandomOperator()} ${generateRandomNumber(min, max)}`;
-}
-
-function generateCorrectAnswer(question) {
-  return `${doMath(question)}`;
-}
-
-export default function calcGame(min, max) {
-  const question = generateQuestion(min, max);
-  const correctAnswer = generateCorrectAnswer(question);
+  const correctAnswer = `${doMath(question)}`;
 
   return {
     task: 'What is the result of the expression?',
