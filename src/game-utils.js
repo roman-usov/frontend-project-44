@@ -98,7 +98,7 @@ export function doGcd(num1, num2) {
   return multiplyValues(matchingMultipliers);
 }
 
-export function generateRandomProgression(
+export function generateRandomProgressionWithHiddenElement(
   min,
   max,
   minLength = 5,
