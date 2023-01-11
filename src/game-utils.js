@@ -83,8 +83,8 @@ function findMatchingArrayElements(arr1, arr2) {
   return matchingArr;
 }
 
-function multiplyValues(...values) {
-  return values.reduce((acc, val) => acc * val, 1);
+function multiplyValues(valuesArr) {
+  return valuesArr.reduce((acc, val) => acc * val, 1);
 }
 
 export function doGcd(num1, num2) {
@@ -95,7 +95,7 @@ export function doGcd(num1, num2) {
     simpleMultipliers2,
   );
 
-  return multiplyValues(...matchingMultipliers);
+  return multiplyValues(matchingMultipliers);
 }
 
 export function generateRandomProgression(

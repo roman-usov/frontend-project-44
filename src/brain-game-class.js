@@ -1,6 +1,4 @@
 export default class BrainGameClass {
-  taskName;
-
   question;
 
   userAnswer;
