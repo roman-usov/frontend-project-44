@@ -2,7 +2,7 @@ import BrainGameClass from '../../brain-game-class.js';
 import { generateRandomNumber, doGcd } from '../../game-utils.js';
 
 export default class BrainGcdGameClass extends BrainGameClass {
-  _task = 'Find the greatest common divisor of given numbers.';
+  task = 'Find the greatest common divisor of given numbers.';
 
   generateQuestion() {
     const expression = `${generateRandomNumber(

@@ -2,7 +2,7 @@ import BrainGameClass from '../../brain-game-class.js';
 import { generateRandomNumber, isEven } from '../../game-utils.js';
 
 export default class BrainEvenGameClass extends BrainGameClass {
-  _task = 'Answer "yes" if the number is even, otherwise answer "no".';
+  task = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   generateQuestion() {
     const random = generateRandomNumber(this.min, this.max);
