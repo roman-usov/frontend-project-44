@@ -97,3 +97,32 @@ export function doGcd(num1, num2) {
 
   return multiplyValues(...matchingMultipliers);
 }
+
+export function generateRandomProgression(
+  min,
+  max,
+  minLength = 5,
+  maxLength = 10,
+  minStep = 2,
+  maxStep = 10,
+) {
+  const progression = [];
+  const length = generateRandomNumber(minLength, maxLength);
+  const startingNumber = generateRandomNumber(min, max);
+  const step = generateRandomNumber(minStep, maxStep);
+
+  progression.push(startingNumber);
+
+  for (let i = 1; i < length; i += 1) {
+    progression.push(progression[i - 1] + step);
+  }
+
+  const indexToHide = generateRandomNumber(0, progression.length - 1);
+
+  const [hiddenNumber] = progression.splice(indexToHide, 1, '..');
+
+  return {
+    progression,
+    hiddenNumber,
+  };
+}
