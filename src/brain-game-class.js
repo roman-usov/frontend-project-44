@@ -12,7 +12,7 @@ export default class BrainGameClass {
   constructor(minNumber, maxNumber, maxQuestions, playerName) {
     this.min = minNumber;
     this.max = maxNumber;
-    this._name = playerName;
+    this.name = playerName;
     this.maxQuestions = maxQuestions;
   }
 
